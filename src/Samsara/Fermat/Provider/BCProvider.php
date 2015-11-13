@@ -49,5 +49,4 @@ class BCProvider
     {
         return bcpowmod($left, $right, $modulus, $scale);
     }
-
 }

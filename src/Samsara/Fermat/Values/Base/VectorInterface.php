@@ -39,5 +39,4 @@ interface VectorInterface
     public function multiplyScalar(NumberInterface $number);
 
     public function divideScalar(NumberInterface $number);
-
 }

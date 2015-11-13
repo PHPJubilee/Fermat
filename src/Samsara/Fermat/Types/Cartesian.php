@@ -52,14 +52,14 @@ class Cartesian
             throw new \InvalidArgumentException('Cannot operate on two cartesians of different dimensionality.');
         }
 
-        for ($i = 0;$i < $this->dimensions->getValue();$i++) {
+        for ($i = 0; $i < $this->dimensions->getValue(); $i++) {
             yield $function($this->getAxis($i), $cartesian->getAxis($i));
         }
     }
 
     public function performOperation(callable $function)
     {
-        for ($i = 0;$i < $this->dimensions->getValue();$i++) {
+        for ($i = 0; $i < $this->dimensions->getValue(); $i++) {
             yield $function($this->getAxis($i));
         }
     }
@@ -68,5 +68,4 @@ class Cartesian
     {
         return ($this->getDimensions()->getValue() == $cartesian->getDimensions()->getValue());
     }
-
 }

@@ -12,12 +12,12 @@ class ImmutableNumber extends Number implements NumberInterface
     {
         $oldBase = $this->convertForModification();
 
-        return (new ImmutableNumber(bcmod($this->getValue(), $mod), $this->getPrecision()))->convertFromModification($oldBase);
+        return (new ImmutableNumber(bcmod($this->getValue(), $mod), $this->getPrecision()))
+            ->convertFromModification($oldBase);
     }
 
     protected function setValue($value)
     {
         return new ImmutableNumber($value, $this->getPrecision(), $this->getBase());
     }
-
 }

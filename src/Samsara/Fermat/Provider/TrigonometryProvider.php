@@ -34,7 +34,7 @@ class TrigonometryProvider
     {
         $squaredSum = Numbers::make(Numbers::MUTABLE, 0);
 
-        $operation = function(NumberInterface $number) {
+        $operation = function (NumberInterface $number) {
             return $number->exp(2);
         };
 
@@ -56,7 +56,7 @@ class TrigonometryProvider
     {
         $squaredSum = Numbers::make($returnType, 0);
 
-        $operation = function(NumberInterface $point1, NumberInterface $point2) {
+        $operation = function (NumberInterface $point1, NumberInterface $point2) {
             return $point1->subtract($point2)->exp(2);
         };
 
@@ -70,7 +70,7 @@ class TrigonometryProvider
     public static function moveCartesianToOrigin(Cartesian $end, Cartesian $start)
     {
 
-        $operation = function(NumberInterface $end, NumberInterface $start) {
+        $operation = function (NumberInterface $end, NumberInterface $start) {
             return $end->subtract($start);
         };
 
@@ -114,5 +114,4 @@ class TrigonometryProvider
 
         return new Cartesian($units);
     }
-
 }

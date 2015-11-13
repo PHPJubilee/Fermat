@@ -19,7 +19,8 @@ class UniformContext extends BaseContext implements ContextInterface
     }
 
     /**
-     * Generates a random number in the provided range, where all possible values are equally likely. (Even distribution.)
+     * Generates a random number in the provided range,
+     * where all possible values are equally likely. (Even distribution.)
      *
      * NOTE: If $max is more than PHP_INT_MAX or $min is less than PHP_INT_MIN, no additional entropy will be gained for
      * the random number, and the distribution will become less evenly distributed across all possible values due to
@@ -37,7 +38,10 @@ class UniformContext extends BaseContext implements ContextInterface
 
         $randFactory = new Factory();
 
-        if ($max->compare(PHP_INT_MAX) != 1 && $min->compare(PHP_INT_MIN) != -1 && $difference->compare(PHP_INT_MAX) != 1) {
+        if ($max->compare(PHP_INT_MAX) != 1 &&
+            $min->compare(PHP_INT_MIN) != -1 &&
+            $difference->compare(PHP_INT_MAX) != 1
+        ) {
             $x = $randFactory->getMediumStrengthGenerator()->generateInt($min, $max);
 
             return Numbers::makeFromBase10($this->numberType, $x, null, $this->contextBase);
@@ -48,7 +52,12 @@ class UniformContext extends BaseContext implements ContextInterface
 
             $addedValue = BCProvider::multiply($fraction, $difference->getValue());
 
-            $randVal = Numbers::makeFromBase10($this->numberType, BCProvider::add($min->getValue(), $addedValue), null, $this->contextBase);
+            $randVal = Numbers::makeFromBase10(
+                $this->numberType,
+                BCProvider::add($min->getValue(), $addedValue),
+                null,
+                $this->contextBase
+            );
 
             return $randVal->round();
         }

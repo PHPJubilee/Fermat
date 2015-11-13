@@ -128,5 +128,4 @@ interface NumberInterface
      * @return NumberInterface
      */
     public function convertFromModification($oldBase);
-
 }

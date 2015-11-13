@@ -12,7 +12,8 @@ class MutableNumber extends Number implements NumberInterface
     {
         $oldBase = $this->convertForModification();
 
-        return (new MutableNumber(bcmod($this->getValue(), $mod), $this->getPrecision()))->convertFromModification($oldBase);
+        return (new MutableNumber(bcmod($this->getValue(), $mod), $this->getPrecision()))
+            ->convertFromModification($oldBase);
     }
 
     protected function setValue($value)
@@ -21,5 +22,4 @@ class MutableNumber extends Number implements NumberInterface
 
         return $this;
     }
-
 }

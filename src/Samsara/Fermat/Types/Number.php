@@ -308,5 +308,4 @@ abstract class Number
     }
 
     abstract protected function setValue($value);
-
 }

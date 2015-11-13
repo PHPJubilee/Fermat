@@ -15,5 +15,4 @@ class MutableVector extends Vector implements VectorInterface
 
         return $this;
     }
-
 }

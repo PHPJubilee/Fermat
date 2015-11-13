@@ -18,5 +18,4 @@ class ImmutableVector extends Vector implements VectorInterface
 
         return new ImmutableVector($cartesian);
     }
-
 }
