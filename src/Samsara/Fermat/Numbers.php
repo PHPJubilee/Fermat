@@ -82,8 +82,9 @@ class Numbers
             return $input;
         }
 
-        throw new \InvalidArgumentException('The $input argument was not numeric or an implementation of NumberInterface.');
+        throw new \InvalidArgumentException(
+            'The $input argument was not numeric or an implementation of NumberInterface.'
+        );
 
     }
-
 }

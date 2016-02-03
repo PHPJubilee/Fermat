@@ -52,5 +52,4 @@ class Tuple
     {
         return $this->data;
     }
-
 }

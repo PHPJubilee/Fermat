@@ -38,7 +38,12 @@ class GaussianContext extends BaseContext
     {
         $this->mean = Numbers::makeOrDont($type, $mean);
         $this->standardDev = Numbers::makeOrDont($type, $mean);
-        $this->variance = Numbers::make($type, BCProvider::exp($this->standardDev->getValue(), 2), $this->standardDev->getPrecision(), $this->standardDev->getBase());
+        $this->variance = Numbers::make(
+            $type,
+            BCProvider::exp($this->standardDev->getValue(), 2),
+            $this->standardDev->getPrecision(),
+            $this->standardDev->getBase()
+        );
         $this->numberType = $type;
     }
 
@@ -80,7 +85,12 @@ class GaussianContext extends BaseContext
     {
         $standardDev = Numbers::makeOrDont($this->numberType, $standardDev);
 
-        $value = Numbers::make($this->numberType, $this->SDToValue($standardDev), $standardDev->getPrecision(), $standardDev->getBase());
+        $value = Numbers::make(
+            $this->numberType,
+            $this->SDToValue($standardDev),
+            $standardDev->getPrecision(),
+            $standardDev->getBase()
+        );
 
         return $this->PDFByValue($value);
     }
@@ -134,5 +144,4 @@ class GaussianContext extends BaseContext
     {
         return $this;
     }
-
 }

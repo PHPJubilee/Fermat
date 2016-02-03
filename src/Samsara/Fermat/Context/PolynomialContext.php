@@ -86,5 +86,4 @@ class PolynomialContext extends BaseContext implements ContextInterface
     {
         return $this;
     }
-
 }

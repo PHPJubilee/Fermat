@@ -30,5 +30,4 @@ class SphericalCoordinate
 
         return new SphericalCoordinate($theta, $phi, $rho);
     }
-
 }

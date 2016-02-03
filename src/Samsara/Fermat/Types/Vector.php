@@ -24,11 +24,14 @@ abstract class Vector
 
         if (!is_null($start)) {
             if ($end->getDimensions()->getValue() == $start->getDimensions()->getValue()) {
-                for ($i = 0;$i < $end->getDimensions()->getValue();$i++) {
+                for ($i = 0; $i < $end->getDimensions()->getValue(); $i++) {
                     $dimensions[] = $end->getAxis($i)->subtract($start->getAxis($i));
                 }
             } else {
-                throw new \InvalidArgumentException('A vector requires that the cartesian points describing the start and end be of the same dimensions.');
+                throw new \InvalidArgumentException(
+                    'A vector requires that the cartesian points describing ' .
+                    'the start and end be of the same dimensions.'
+                );
             }
         } else {
             $dimensions = $end->getAllAxes();
@@ -144,5 +147,4 @@ abstract class Vector
      * @return VectorInterface
      */
     abstract protected function setDimensions(Tuple $dimensions);
-
 }

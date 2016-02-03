@@ -85,5 +85,4 @@ trait SphericalCoordinateTrait
     {
         return $this->getRho();
     }
-
 }

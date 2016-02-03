@@ -34,5 +34,4 @@ abstract class BaseContext
      * @return      $this
      */
     abstract protected function transformBaseContext($base);
-
 }
